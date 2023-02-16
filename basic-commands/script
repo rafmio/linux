@@ -1,0 +1,6 @@
+#! /usr/bin/python3
+
+#filename: script
+
+for i in range(20):
+    print(f"This is a cool script {i}")

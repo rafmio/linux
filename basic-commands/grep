@@ -1,0 +1,11 @@
+Find 'nix' snippet in the file.txt:
+$ grep nix file.txt
+
+$ grep 'hello world' file.txt
+
+Number of line:
+$ grep -n nix file.txt
+$ grep -n 'hello world' file.txt
+
+Search any word than has "n" in the line:
+$ grep .n file.txt

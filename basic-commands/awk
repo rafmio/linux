@@ -1,0 +1,12 @@
+# https://www.geeksforgeeks.org/awk-command-unixlinux-examples/
+
+$ awk '/manager/ {print}' employee.txt
+
+# Print 1st and 4d value of the line
+$ awk '{print $1,$4}' employee.txt
+
+# Display number of line at the 0th position:
+$ awk '{print NR,$0}' employee.txt
+
+# Display last field:
+$ awk '{print $1,$NF}' employee.txt
