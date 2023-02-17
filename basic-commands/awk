@@ -1,6 +1,13 @@
 # https://www.geeksforgeeks.org/awk-command-unixlinux-examples/
+# https://losst.pro/ispolzovanie-awk-v-linux
+
+# Basic awk's syntax:
+# awk options 'condition{action}'
+# awk options 'condition{action}condition{action}'
 
 $ awk '/manager/ {print}' employee.txt
+
+$ ls -i <filename> | awk '{print $1}' > new-file
 
 # Print 1st and 4d value of the line
 $ awk '{print $1,$4}' employee.txt
@@ -10,3 +17,7 @@ $ awk '{print NR,$0}' employee.txt
 
 # Display last field:
 $ awk '{print $1,$NF}' employee.txt
+$ echo 'one two three four' | awk '{print $NF}'
+
+# Предпоследний элемент:
+$ echo 'one two three four' | awk '{print ${NF-1)}'

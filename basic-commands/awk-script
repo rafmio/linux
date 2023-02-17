@@ -1,0 +1,15 @@
+#!/bin/sh
+BEGIN {
+print "Users and their corresponding home"
+print " User Name \t HomePath"
+print "___________ \t ___________"
+FS=":"
+}
+
+{
+print $1 " \t " $6
+}
+
+END {
+print "The end"
+}
