@@ -1,0 +1,21 @@
+https://makelinux.github.io/kernel/map/
+https://en.wikibooks.org/wiki/The_Linux_Kernel/Human_interfaces
+https://www.kernel.org/doc/html/latest/usb/gadget_hid.html
+
+---------------------------------------------------------------
+HI - human interfaces
+HID - human interface devices (устройство взаимодействи с человеком)
+The term "HID" most commonly refers to the USB HID specification.
+
+In the HID protocol there are 2 entities:
+- host
+- device
+
+User peripherals:
+- keyboard
+- camera
+- mouse 
+- graphics card
+- audio
+
+HI peripherals device drivers

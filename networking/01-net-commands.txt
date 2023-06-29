@@ -1,0 +1,6 @@
+wget
+curl
+nc
+nmap - сетевой сканер для сканирования и тестирования на проникновение удаленных узлов
+
+https://losst.pro/kak-posmotret-otkrytye-porty-v-linux

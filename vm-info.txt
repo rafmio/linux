@@ -1,0 +1,3 @@
+VM
+Hostname: debian12-vm
+
