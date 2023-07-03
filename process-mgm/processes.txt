@@ -1,11 +1,22 @@
 Processes
 
+Linux kernel map предусматривает следующие аспекты управления процессами:
+- processes
+- threads
+- synchronization
+- scheduler
+- interrupts core
+- CPU specific
+- CPU (registers, APIC, interrupt controller)
+
 struct task_struct {
 }
 List of members and short description
 Explanation: https://linux-concepts.blogspot.com/2018/02/explanation-of-struct-taskstruct.html
 
 Syscalls for process management (list with short description)
+
+Signals
 
 Exercises: Go, C
 - create process
@@ -27,7 +38,7 @@ Exercises: Go, C
 - стек процесса, 
 - набор регистров процессора
 
-Планировщик ядра управвляет выполнением отдельных потоков, а не процессов.
+Планировщик ядра управвляет выполнением отдельных потоков, а не процессов (?).
 В традиционных Unix-подобных ОС 1 процесс == 1 поток.  В современных ОС многопоточные программы используются широко.
 (?)Поток в Linux - это специальный тип процесса.
 
@@ -51,6 +62,25 @@ fg %1 - перейти на фоновую задачу 1
 
 Память под структуру task_struct выделяется с пом.спец. прог-мы распределения блочного типа (slab allocator), обеспечивающий эффективн. повторное использ-е объектов и раскрашивание стека (cache coloring)
 
-Отдельно изучить - стек процесса в Linux
+Отдельно изучить - стек процесса в Linux. Системный стек.
 
+struct thread_info {}
+
+PID - целое число, представленное с пом.скрытого (opaque type) типа pid_t. Max значение PID - 32768 (== short int). В Debian 11 - 4194304. Можно посмотреть и изменить в /proc/sys/kernel/pid_max
+
+В бОльшей части кода ядра, работающего с процессами, выполняется обращение прямо к полям структуры task_struct. 
+
+Много информации о запущенном процессе можно увидеть в файле /proc/<PID>/status
+Много другой инфы можно найти о процессе в файлах по адресу /proc/<PID>
+
+Состояния процесса
+Перенести данные из блокнота:
+- Running or Runnable (R)
+- Uninterruptible Sleep (D) - не реагирует ни на какие сигналы, ждет только ресурсов
+- Interruptable Sleep (S)
+- Stopped (T)
+- Zombie (Z)
+https://www.baeldung.com/linux/process-states
+
+ 
 
