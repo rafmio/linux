@@ -18,6 +18,8 @@ Syscalls for process management (list with short description)
 
 Signals
 
+Таймеры ядра
+
 Exercises: Go, C
 - create process
 - kill process
@@ -84,3 +86,4 @@ https://www.baeldung.com/linux/process-states
 
  
 
+$ lsof -p <PID> # - просмотр открытых файлов процесса
