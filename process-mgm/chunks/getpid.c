@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-pid_t getpid(void);
+pid_t getpid(void); // можно и закомментировать или удалить - все равно работает
 
 void main() {
     printf("My pid = %jd\n", (__intmax_t) getpid());
