@@ -9,9 +9,6 @@ import (
 )
 
 func main() {
-	fmt.Println("PID: ", os.Getpid())
-	fmt.Println()
-
 	cmd := exec.Command("ps")
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout

@@ -8,6 +8,5 @@ void main() {
 		perror("execl");	
 	}
 	printf("ret: %d\n", ret);
+	printf("PID:%d\n", (__intmax_t) getpid());
 }
-
-// int execl(const char *pathname, const char *arg, .../*char *) NULL */)
