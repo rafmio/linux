@@ -18,7 +18,10 @@ main(int argc, char *argv[]) {
 
     if(setenv("GREET", "Hello world", 0) == -1) {
         printf("setenv");
+    } else {
+    	printf("getenv %s\n", getenv("GREET"));
     }
+    
     unsetenv("BYE");
     for (ep = environ; *ep != NULL; ep++) {
         puts(*ep);

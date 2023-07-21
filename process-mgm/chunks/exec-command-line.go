@@ -10,6 +10,7 @@ import (
 
 func main() {
 	cmd := exec.Command("ps")
+	cmd.Args = []string{"-A"}
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr

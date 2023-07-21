@@ -1,4 +1,4 @@
-#include <sys/types.h>
+#include <sys/types.h> // можно и не импортировать, если getpid() закомменчен
 #include <unistd.h>
 #include <stdio.h>
 
