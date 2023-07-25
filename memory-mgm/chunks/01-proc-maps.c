@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
-void getpathfile(char *path);
+//void getpathfile(char *path);
 
 int
 main(void) {

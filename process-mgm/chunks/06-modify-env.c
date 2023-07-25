@@ -29,3 +29,10 @@ main(int argc, char *argv[]) {
 
     exit(EXIT_SUCCESS);
 }
+
+// int putenv(char *string);
+// arg string is the form name=value
+// If name does not already exist int the environment, then string added to environment
+// if name is exist, then the value of name changed 
+
+// putenv returns 0 on success
