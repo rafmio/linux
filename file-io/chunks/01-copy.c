@@ -43,12 +43,14 @@ main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    // Перемещение данных до достиж-я конца файла ввода или возник-я ошибкиЖ
+    // Перемещение данных до достиж-я конца файла ввода или возник-я ошибки:
     while( (numRead = read(inputFd, buf, BUF_SIZE)) > 0) {
         if(write(outputFd, buf, numRead) != numRead) {
             printf("could't write whole buffer");
         }
     }
+    // при наступлении каких условий происходит выход из while? 
+    
     if( numRead == -1 ) {
         perror("read");
         exit(EXIT_FAILURE);
@@ -67,3 +69,7 @@ main(int argc, char *argv[]) {
 
 // ./01-copy.exe /proc/self/maps maps.txt - копирование обычного файла
 // ./01-copy.exe maps.txt /dev/tty - копировать обычный файл в это терминал
+
+// read() returns zero if:
+// - the file offset is at or past the end of file
+// - no bytes are read

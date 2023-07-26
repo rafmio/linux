@@ -15,7 +15,8 @@ func main() {
 	// var openFlags int
 	// var filePerms uint32
 	var numRead int
-	var buf []byte
+	// var buf [BUF_SIZE]byte - не сработало!
+	buf := make([]byte, 2048)
 
 	if len(os.Args) != 3 || strings.Compare(os.Args[1], "--help") == 0 {
 		fmt.Println("too few arguments")
