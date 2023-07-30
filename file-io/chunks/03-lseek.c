@@ -9,6 +9,7 @@
 void lsProcPidFdDir();
 void printFdStat(int fd);
 off_t calcSize(int fd); // we can find size using lseek(fd, 0, SEEK_END);
+void readFdDirFunc();
 
 int
 main(int argc, char *argv[]) {
@@ -65,6 +66,7 @@ main(int argc, char *argv[]) {
     }
 
     // lsProcPidFdDir(); // - вместо system(lsDir) используем readdir(3)
+    readFdDirFunc();
 
 
     _exit(EXIT_SUCCESS);
@@ -120,3 +122,26 @@ off_t calcSize(int fd) {
     }
 }
 
+void readFdDirFunc() {
+    char *procDir = "/proc/";
+    char *fdDir = "/fd";
+    char *path = (char*)malloc(sizeof(procDir) + sizeof(pid_t) + sizeof(fdDir));
+    char *pidStr = (char*)malloc(sizeof(pid_t));
+    sprintf(pidStr, "%d", getpid());
+    sprintf(path, "%s%s%s", procDir, pidStr, fdDir);
+    printf("readir(%s):\n", path);
+
+    DIR *dir = opendir(path);
+    struct dirent *ent;
+
+    if(dir == NULL) {
+        perror("opendir()");
+        _exit(EXIT_FAILURE);
+    }    
+
+    while( (ent = readdir(dir))) {
+        printf("%s %ld %ld %d %d\n", ent->d_name, ent->d_ino, ent->d_off, ent->d_reclen, ent->d_type);
+    }
+
+    closedir(dir);
+}
