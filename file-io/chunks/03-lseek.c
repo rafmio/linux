@@ -4,6 +4,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <dirent.h> // for readdir()
 
 void lsProcPidFdDir();
 void printFdStat(int fd);
@@ -48,6 +49,7 @@ main(int argc, char *argv[]) {
                 printf("couldn't write whole buffer");
             }
         }
+        // check for current file position
         int currPosAfterWread = lseek(inputFd, 0, SEEK_CUR);
         if (currPosAfterWread == -1) {
             perror("lseek()");
@@ -62,7 +64,8 @@ main(int argc, char *argv[]) {
         _exit(EXIT_FAILURE);
     }
 
-    lsProcPidFdDir();
+    // lsProcPidFdDir(); // - вместо system(lsDir) используем readdir(3)
+
 
     _exit(EXIT_SUCCESS);
 }
@@ -101,7 +104,7 @@ void printFdStat(int fd) {
         printf("st_blocks\t%ld\t - Number of 512B blocks allocated\n", statFd.st_blocks);
 
         printf("st_atim:\t%ld - Time of last access\n", statFd.st_atime);
-        printf("st_mtime\t%ld- Time of last modification\n", statFd.st_mtime);
+        printf("st_mtime\t%ld - Time of last modification\n", statFd.st_mtime);
         printf("st_ctime\t%ld - Time of last status change\n", statFd.st_ctime);
     }
 }
@@ -116,3 +119,4 @@ off_t calcSize(int fd) {
         return (off_t) stFd.st_size;
     }
 }
+
