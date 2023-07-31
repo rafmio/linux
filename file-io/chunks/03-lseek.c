@@ -140,7 +140,13 @@ void readFdDirFunc() {
     }    
 
     while( (ent = readdir(dir))) {
-        printf("%s %ld %ld %d %d\n", ent->d_name, ent->d_ino, ent->d_off, ent->d_reclen, ent->d_type);
+        printf("%ld %ld %d %d %s\n", 
+        ent->d_ino,     // inode num
+        ent->d_off,     // position in the directory stream 
+        ent->d_reclen,  // length of this record
+        ent->d_type,    // type of file
+        ent->d_name     // filename
+        );
     }
 
     closedir(dir);
