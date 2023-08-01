@@ -35,7 +35,7 @@ main(int argc, char const *argv[]) {
     }
 
 // DISTINATION FILE: ----------------------------------------------
-    int openFlags = O_CREAT | O_RDWR;
+    int openFlags = O_CREAT | O_WRONLY;
     int filePerms = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
     int distFd = open(argv[2], openFlags, filePerms); 
     if (distFd == -1) {
@@ -60,14 +60,25 @@ main(int argc, char const *argv[]) {
 
 // WRITE FROM CENTER TO END: ---------------------------------------
     while( (readNum = read(sourceFd, buffer, BUFFER_SIZE)) > 0) {
-        if (write(distFd, buffer, BUFFER_SIZE) != readNum) {
+        if (write(distFd, buffer, readNum) != readNum) {
             printf("can't write whole buffer\n");
         }
         printf("%d bytes was wrote\n", readNum);
     }
 
-// READ DISTINATION FILE: ------------------------------------------
+// WRITE OUT OF EOF: ------------------------------------------
+    printf("\n");
+    printf("Current position in distFd file: %ld\n", lseek(distFd, 0, SEEK_CUR));
+    printf("Now set file position + 10 out of EOF\n");
+    position = lseek(distFd, 10, SEEK_END);
+    printf("Now position at distFd is: %d\n", position);
 
+    char textForWrite[] = "This text was wrote out of EOF";
+
+    if (write(distFd, textForWrite, sizeof(textForWrite)) == -1 ) {
+        perror("wirte() to distFd");
+        _exit(EXIT_FAILURE);
+    }
 
 
     close(sourceFd);

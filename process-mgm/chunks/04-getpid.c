@@ -4,7 +4,9 @@
 
 pid_t getpid(void); // можно и закомментировать или удалить - все равно работает
 
-void main() {
+int main() {
     printf("My pid = %jd\n", (__intmax_t) getpid());
     printf("Parent's pid = %jd\n", (__intmax_t) getppid()); 
+
+    return 0;
 }
