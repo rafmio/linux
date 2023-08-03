@@ -1,7 +1,11 @@
-rchar: 2300
-wchar: 0
-syscr: 7
-syscw: 0
-read_bytes: 0
-write_bytes: 0
-cancelled_write_bytes: 0
+structPath(char* path) {
+    char procDir[] = "/proc/";
+    char fdDir[] = "/fd";
+    char pid[8];
+    sprintf(pid, "%d", getpid());
+
+    strcat(path, procDir);
+    strcat(path, pid);
+    strcat(path, fdDir);
+}
+

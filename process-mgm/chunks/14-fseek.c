@@ -9,7 +9,7 @@ main(int argc, char* argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    FILE *fp = fopen(argv[1], "rb");
+    FILE *fp = fopen(argv[1], "r");
     if (fp == NULL) {
         exit(EXIT_FAILURE);
     }
@@ -20,12 +20,25 @@ main(int argc, char* argv[]) {
         printf("fseek() error");
         exit(EXIT_FAILURE);
     } else {
-        long file_size = ftell(fp);
+        long file_size = ftello(fp);    // return current file position
         printf("Length of the file: %ld\n", file_size);
-        file_size = fseek(fp, file_size / 2, SEEK_SET);
+        fseek(fp, file_size / 2, SEEK_SET);
+
+        char buffer[file_size / 2];
+
+        FILE *outputFile = fopen(argv[2], "w");
+        if (outputFile == NULL) {
+            printf("error fopen()\n");
+            exit(EXIT_FAILURE);
+        }
+
+        while ( fgets(buffer, sizeof(buffer), fp) != NULL ) {
+            fputs(buffer, outputFile);
+        }
+
+        fflush(outputFile);
+        fclose(outputFile);
     }
-
-
 
     fclose(fp);
 
