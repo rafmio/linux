@@ -1,3 +1,4 @@
+// fseek() и запись в пределах файла
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
