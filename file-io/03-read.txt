@@ -17,3 +17,13 @@ buffer - буфер, в кот.д.б. помещены входные данны
 buffer[numRead] = '\0';
 
 
+#include <stdio.h>
+int fgetc(FILE *stream);
+Считывает следующий символ из stream и возвращает как unsigned char, приведенный к int.
+Сохранение в char, а не в int - распространенный промах.
+
+
+#include <stdio.h>
+char* fgets(char *str, int size, FILE* stream);
+
+
