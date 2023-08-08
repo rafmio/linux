@@ -1,3 +1,5 @@
+last stop: file-io/02-copy.go
+
 1. код на си - PID, PPID
 2. код на Go - PID, PPID
 3. ls /proc, htop, ps, ps -eaf, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
@@ -30,3 +32,5 @@
 	- lseek()
 	- stat() / fstat() / lstat()
 	- mkdir(), rmdir()
+
+
