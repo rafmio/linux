@@ -1,5 +1,5 @@
 last stop book: 536
-last stop exercises: file-io/chunck/19-fprintf.c
+last stop exercises: file-io/chunck/23-ReadFile.go
 
 1. код на си - PID, PPID
 2. код на Go - PID, PPID
