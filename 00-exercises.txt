@@ -1,4 +1,4 @@
-last stop book: 556
+last stop book: 570
 last stop exercises: file-io/chunks/02-lseek.c
 
 1. код на си - PID, PPID
