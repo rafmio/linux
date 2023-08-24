@@ -1,11 +1,3 @@
-structPath(char* path) {
-    char procDir[] = "/proc/";
-    char fdDir[] = "/fd";
-    char pid[8];
-    sprintf(pid, "%d", getpid());
-
-    strcat(path, procDir);
-    strcat(path, pid);
-    strcat(path, fdDir);
-}
-
+Ciao
+Hello-mello, Kissy-Missy
+Hello-mello, Kissy-Missy
