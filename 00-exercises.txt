@@ -1,5 +1,5 @@
-last stop book: 570
-last stop exercises: file-io/chunks/02-lseek.c
+last stop book: 570 signals
+last stop exercises: file-io/chunks/04-stat.c
 
 3. ls /proc, htop, ps, ps -eaf, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
 4. strace ./executableFile;
