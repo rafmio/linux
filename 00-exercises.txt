@@ -1,8 +1,6 @@
 last stop book: 570
 last stop exercises: file-io/chunks/02-lseek.c
 
-1. код на си - PID, PPID
-2. код на Go - PID, PPID
 3. ls /proc, htop, ps, ps -eaf, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
 4. strace ./executableFile;
    использовать ключ -k: $ strace -l sleep 1 # ключ -k выдает стек вызовов
@@ -25,12 +23,4 @@ last stop exercises: file-io/chunks/02-lseek.c
 21. Разобраться с ForkExec() в Go - найти примеры использования и корректного завершения процессов
 22. По аналогии с 05-execve.c написать бинарник, который будет делать export PATH=$PATH:/usr/local/go/bin
 23. Просмотр каталога /proc/PID/fdinfo - открытых для процесса дескрипторов файлов
-24. Написать код, в котором будут:
-	- open(), openat()
-	- close()
-	- read()
-	- write()
-	- lseek()
-	- stat() / fstat() / lstat()
-	- mkdir(), rmdir()
 25. Сигналы
