@@ -1,4 +1,4 @@
-last stop book: 612
+last stop book: 627
 last stop exercises: file-io/chunks/04-stat.c
 
 3. ls /proc, htop, ps, ps -eaf, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
@@ -25,3 +25,4 @@ last stop exercises: file-io/chunks/04-stat.c
 23. Просмотр каталога /proc/PID/fdinfo - открытых для процесса дескрипторов файлов
 25. Сигналы
 26. man proc / man 5 proc
+27. Посмотреть сколько потоков у процесса: $ ps -p <PID> -o nlwp

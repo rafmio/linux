@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <signal.h>
 #include <sys/wait.h>
+// #include <sys/types.h>
 #include <fcntl.h>
 #include <sched.h>
 #include <stdio.h>
@@ -21,8 +22,8 @@ childFunc(void *arg) {
         exit(EXIT_FAILURE);
     }
 
-    printf("Blah-blah-blah inside childFunc()\n");
-
+    printf("Inside childFunc(): the child's PID: %d, PPID: %d\n", getpid(), getppid());
+    
     return 0;               // здесь потомок завершается
 }
 
@@ -32,19 +33,20 @@ main(int argc, char *argv[]) {
         printf("\nargv[1]: %s\n", argv[1]);
     }
 
+    printf("I'm a parent. My PID is: %d\n", getpid());
     const int STACK_SIZE = 65536;   // Размер стека для клонированного потомка
     char *stack;                    // Начало буфера стека
     char *stackTop;                 // Конец буфера стека
     int s, fd, flags;
 
-    fd = open("/dev/null", O_RDWR); // потомок закроед дескриптор fd
+    fd = open("/dev/null", O_RDWR); // потомок закроет дескриптор fd
     if (fd == -1) {
         perror("open /dev/null");
         exit(EXIT_FAILURE);
     }
 
     /* Если argc > 1, потомок будет разделять таблицу файловых дескрипторов с родителем*/
-    flags = (argc > 1) ? CLONE_FILES : 0;
+    flags = (argc > 1) ? CLONE_FILES : 0;  // CLONE_FILES - битовая маска
 
     /* Выделяем стек для потомка */
     stack = malloc(STACK_SIZE);
