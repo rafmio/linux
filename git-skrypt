@@ -1,0 +1,17 @@
+#!/bin/bash
+while true; do
+    # проверяем, есть ли сообщение о том, что коммит не нужно делать
+    if [[ $(git status) -eq "nothing to commit, working tree clean" ]]; then
+        echo "Коммит отменен и не нужно его делать"
+        break
+    fi
+
+    # выполняем команду для добавления изменений в индекс
+    git add .
+
+    # выполняем команду для коммита изменений в удаленный репозиторий
+    git commit -m "Home PC $(date)"
+
+    # выходим из цикла
+    break
+done
