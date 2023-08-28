@@ -11,6 +11,8 @@ while true; do
 
     # выполняем команду для коммита изменений в удаленный репозиторий
     git commit -m "Home PC $(date)"
+    
+    git push
 
     # выходим из цикла
     break
