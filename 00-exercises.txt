@@ -1,4 +1,4 @@
-last stop book: 630
+last stop book: 632
 last stop exercises: file-io/chunks/04-stat.c
 
 3. ls /proc, htop, ps, ps -eaf, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
