@@ -1,0 +1,31 @@
+558fe1d87000-558fe1d88000 r--p 00000000 08:11 5522103                    /home/raf/Volume-100-1/linux/memory-mgm/chunks/07-dynamic-section.exe
+558fe1d88000-558fe1d89000 r-xp 00001000 08:11 5522103                    /home/raf/Volume-100-1/linux/memory-mgm/chunks/07-dynamic-section.exe
+558fe1d89000-558fe1d8a000 r--p 00002000 08:11 5522103                    /home/raf/Volume-100-1/linux/memory-mgm/chunks/07-dynamic-section.exe
+558fe1d8a000-558fe1d8b000 r--p 00002000 08:11 5522103                    /home/raf/Volume-100-1/linux/memory-mgm/chunks/07-dynamic-section.exe
+558fe1d8b000-558fe1d8c000 rw-p 00003000 08:11 5522103                    /home/raf/Volume-100-1/linux/memory-mgm/chunks/07-dynamic-section.exe
+7fb4b85de000-7fb4b8600000 r--p 00000000 08:11 1873320                    /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7fb4b8600000-7fb4b8759000 r-xp 00022000 08:11 1873320                    /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7fb4b8759000-7fb4b87a8000 r--p 0017b000 08:11 1873320                    /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7fb4b87a8000-7fb4b87ac000 r--p 001c9000 08:11 1873320                    /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7fb4b87ac000-7fb4b87ae000 rw-p 001cd000 08:11 1873320                    /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7fb4b87ae000-7fb4b87b4000 rw-p 00000000 00:00 0 
+7fb4b87d5000-7fb4b87d6000 r--p 00000000 08:11 1873312                    /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7fb4b87d6000-7fb4b87f6000 r-xp 00001000 08:11 1873312                    /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7fb4b87f6000-7fb4b87fe000 r--p 00021000 08:11 1873312                    /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7fb4b87ff000-7fb4b8800000 r--p 00029000 08:11 1873312                    /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7fb4b8800000-7fb4b8801000 rw-p 0002a000 08:11 1873312                    /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7fb4b8801000-7fb4b8802000 rw-p 00000000 00:00 0 
+7ffe0a6de000-7ffe0a6ff000 rw-p 00000000 00:00 0                          [stack]
+7ffe0a7a6000-7ffe0a7aa000 r--p 00000000 00:00 0                          [vvar]
+7ffe0a7aa000-7ffe0a7ac000 r-xp 00000000 00:00 0                          [vdso]
+
+Описание колонок (слева-направо):
+- диапазон адресов. Если данная область отражена в файл, то пусть к нему указан рядом.
+- разрешения: r - read, w - write, x - execute, s - (?) share, p - изолирован от др.пр-сов
+- сдвиг - если область отражена в файл, то это сдвиг относит-но начала диапазона файла.
+  Если область не отражена, то обычно содержит 0
+- устройство - если область отражена в файл, то здесь указан номер устройства в формате m:n, кот-е хранит файл
+  Это м.б. жесткого диска, на кот-мь хранятся разделяемый объектный файл
+- inode - файла, в кот.отражена область памяти
+- путь или описание - если область отражена в файл, то здесь указывается пусть к нему
+  В противном случае столбец м.б. пустым или описывать назначение области - [stack]
