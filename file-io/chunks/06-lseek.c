@@ -66,28 +66,6 @@ off_t calcSize(int fd) {
     }
 }
 
-void readFdDirFunc(char *path) {
-    DIR *dir = opendir(path);
-    struct dirent *ent;
-
-    if (dir == NULL) {
-        perror("opendir()");
-        _exit(EXIT_FAILURE);
-    }
-
-    while( (ent = readdir(dir)) ) {
-        printf("d_ino: %ld, d_off: %ld, d_reclen: %d, d_type: %d, d_name: %s\n", 
-            ent->d_ino,     // inode number
-            ent->d_off,     // position in the directory stream
-            ent->d_reclen,  // length of this record
-            ent->d_type,    // type of file 
-            ent->d_name     // filename
-        );
-    }
-
-    closedir(dir);
-}
-
 
 int
 main(int argc, char const *argv[]) {
@@ -146,8 +124,6 @@ main(int argc, char const *argv[]) {
         perror("closing file");
         _exit(EXIT_FAILURE);
     }
-
-    readFdDirFunc(pathProcPidFd);
 
     _exit(EXIT_SUCCESS);
 }

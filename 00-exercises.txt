@@ -1,6 +1,6 @@
 last stop book: 632
-last stop Extremalny Ci: 154
-last stop exercises: file-io/chunks/06-stat.c - выделить в отдельный файл ф-ции opendir() и readdir()
+last stop Extremalny Ci: 164
+last stop exercises: file-io/chunks/07-lseek.c 
 
 3. ls /proc, htop, ps, ps -eaf, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
 4. strace ./executableFile;
