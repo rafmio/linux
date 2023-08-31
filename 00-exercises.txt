@@ -1,5 +1,5 @@
 last stop book: 632
-last stop Extremalny Ci: 164
+last stop Extremalny Ci: 186 (finish current 12-heap.c)
 last stop exercises: file-io/chunks/07-lseek.c 
 
 3. ls /proc, htop, ps, ps -eaf, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
