@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int main() {
-    void *ptr = mallo(1024);  //  выделяем для кучи 1 КБайт
+    void *ptr = malloc(1024);  //  выделяем для кучи 1 КБайт
     printf("Address: %p\n", ptr);
     fflush(stdout);           // для принудительного вывода
 
