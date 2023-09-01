@@ -62,7 +62,7 @@ int main()
     // выделяем 10 байт, каждый из которых обнулен
     char *ptr2 = (char *)calloc(10, sizeof(char));
     printf("Address of ptr2: %p\n", (void *)&ptr2);
-    printf("Memory allocated by calloc at %p: ", (void*)&ptr2);
+    printf("Memory allocated by calloc at %p: ", (void*)ptr2);
     for (int i = 0; i < 10; i++)
     {   
         ptr2[i] = i * i;
@@ -79,3 +79,7 @@ int main()
 
     return 0;
 }
+
+/*
+$ vargrind --leak-check=full ./12-heap.c
+*/

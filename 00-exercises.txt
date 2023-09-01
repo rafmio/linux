@@ -1,5 +1,5 @@
 last stop book: 632
-last stop Extremalny Ci: 186 (finish current 12-heap.c)
+last stop Extremalny Ci: 198
 last stop exercises: file-io/chunks/07-lseek.c 
 
 3. ls /proc, htop, ps, ps -eaf, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
@@ -31,4 +31,5 @@ last stop exercises: file-io/chunks/07-lseek.c
 27. Посмотреть сколько потоков у процесса: $ ps -p <PID> -o nlwp
 28. $ readelf -a ./exefilename
 29. Структура файла /proc/<PID>/maps - ~/linux/memory-mgm/07-maps-file-struct.txt
-
+30. Утилита valgrind для мониторинга утечки памяти: $ valgrind ./executableFile (д.б.скомпилирован с ключом -g)
+						    $ valgrind --leak-check=full ./executableFIle
