@@ -1,3 +1,4 @@
+// код не является потокобезопасным 
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +8,7 @@
 
 void* thread_body(void* arg) {
     char* str = (char*)arg;
-    printf("inside thread_body():\nPID: %d\nTID: %d\narg: %s\n\n", getpid(), gettid(), str);
+    printf("thread_body(): PID: %d, TID: %d, arg: %s\n", getpid(), gettid(), str);
 
     return NULL;
 }
@@ -15,6 +16,7 @@ void* thread_body(void* arg) {
 int main() {
     pthread_t threads[6];
     int i;
+    // элементы массива находятся в сегменте данных
     char *arguments[6] = {"Kissy", "Missy", "Tosy", "Bosy", "Huggy", "Wuggy"};
     for (i = 0; i < 6; i++) {
        int result = pthread_create(&threads[i], NULL, thread_body, arguments[i]);
