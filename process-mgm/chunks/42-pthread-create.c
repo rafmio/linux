@@ -7,7 +7,7 @@
 // Стандартный заголовок POSIX для использ-я pthread
 #include <pthread.h>
 
-// Эта ф-ция содержит логику, кот. должна выполняться
+// Эта ф-ция (функция компаньон-потока) содержит логику, кот. должна выполняться
 // как тело отдельного потока
 void* thread_body(void* arg) {
     if (arg == NULL) {
@@ -25,7 +25,7 @@ int main() {
     printf("inside main(): TID: %d\n", gettid());
 
     // обработчик потоков
-    pthread_t thread;
+    pthread_t thread;  // ссылка на поток
 
     // создаем новый поток
     int result = pthread_create(&thread, NULL, thread_body, NULL);
@@ -33,8 +33,11 @@ int main() {
     if (result) {
         printf("Thread could not be created. Error number: %d\n", result);
         exit(EXIT_FAILURE);
+    } else {
+        printf("result variable: %d\n", result);
     }
 
+    // создав поток, мы его присоединяем
     // ждем, пока созданный поток не завершит работу
     result = pthread_join(thread, NULL);
     // если присоедниение потока оказалось неудачным
