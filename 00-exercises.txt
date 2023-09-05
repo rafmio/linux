@@ -1,5 +1,5 @@
 last stop book: 632
-last stop Extremalny Ci: 465
+last stop Extremalny Ci: 469
 last stop exercises: file-io/chunks/11-fseek.c
 
 3. ls /proc, htop, ps, ps -eaf, ps x, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
