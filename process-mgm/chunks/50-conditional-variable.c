@@ -20,6 +20,7 @@ typedef struct {
 void shared_state_init(shared_state_t *shared_state) {
     shared_state->done = FALSE;
     pthread_mutex_init(&shared_state->mtx, NULL);
+    // shated_state->mtx = PTHREAD_MUTEX_INITIALIZER - альтернатива pthread_mutex_init()
     pthread_cond_init(&shared_state->cv, NULL);
 }
 
