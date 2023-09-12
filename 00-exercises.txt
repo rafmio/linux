@@ -38,3 +38,5 @@ last stop exercises: file-io/chunks/18-fscanf.c
 	$ for i in {1..10}; do
 	> команда для запуска
 	> done
+32. Перекомпилировать с проверкой на предмет выхода за пределы массива (а еще утечки):
+	$ gcc -fsanitize=address -g example.c
