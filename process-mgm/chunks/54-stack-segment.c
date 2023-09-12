@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+#include <pthread.h>
+
+void*
+thread_body_1(void* arg) {
+    if (arg == NULL) {
+        // заглушка 
+    }
+    int local_var = 0;
+    printf("Thread1     > Stack Address: %p\n", (void*)&local_var);
+    return 0;
+}
+
+void*
+thread_body_2(void* arg) {
+    if (arg == NULL) {
+        // заглушка
+    }
+    int local_var = 0;
+    printf("Thread2     > Stack Address: %p\n", (void*)&local_var);
+    return 0;
+}
+
+int
+main() {
+    printf("PTHREAD_STACK_MIN: %d\n", PTHREAD_STACK_MIN);
+    size_t buffer_len = PTHREAD_STACK_MIN + 100;
+    printf("buffer_len: %ld\n", buffer_len);
+
+    // Буфер, выделенный из кучи и используемый как стек потока
+    char* buffer = (char*)malloc(buffer_len * sizeof(char));
+
+    // Обработчики потоков
+    pthread_t thread1;
+    pthread_t thread2;
+
+    // Создаем новый поток с атрибутами по умолчанию
+    int result1 = pthread_create(&thread1, NULL, thread_body_1, NULL);
+
+    // Создаем новый поток с нашим собственным стеком
+    pthread_attr_t attr;
+    pthread_attr_init(&attr);
+    // задаем адрес и размер стека
+    if (pthread_attr_setstack(&attr, buffer, buffer_len)) {
+        printf("Failed while setting the stack attributes\n");
+        exit(1);
+    }
+
+    int result2 = pthread_create(&thread2, &attr, thread_body_2, NULL);
+    
+    if (result1 || result2) {
+        printf("The threads could not be created\n");
+        exit(2);
+    }
+
+    printf("Main Thread > Heap Address: %p\n", (void*)buffer);
+    printf("Main Thread > Stack Address: %p\n", (void*)&buffer_len);
+
+    // Ждем, пока потоки не завершат работу
+    result1 = pthread_join(thread1, NULL);
+    result2 = pthread_join(thread2, NULL);
+    if (result1 || result2) {
+        printf("The threads could not be joined\n");
+        exit(3);
+    }
+
+    free(buffer);
+    
+    return 0;
+}
