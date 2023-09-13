@@ -1,5 +1,5 @@
 last stop book: 632
-last stop Extremalny Ci: 501
+last stop Extremalny Ci: 505
 last stop exercises: file-io/chunks/24-setvbuf.c
 
 3. ls /proc, htop, ps, ps -eaf, ps x, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
