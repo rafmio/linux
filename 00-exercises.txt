@@ -1,6 +1,6 @@
 last stop book: 632
-last stop Extremalny Ci: 516
-last stop exercises: file-io/chunks/21-Seek.go
+last stop Extremalny Ci: 501
+last stop exercises: file-io/chunks/24-setvbuf.c
 
 3. ls /proc, htop, ps, ps -eaf, ps x, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
 4. strace ./executableFile;
