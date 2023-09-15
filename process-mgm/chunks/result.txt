@@ -1,0 +1,130 @@
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The child process sees the counter as: 2
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The parent process sees the counter as 1
+The child process finished with status 0
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The child process sees the counter as: 1
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The parent process sees the counter as 1
+The child process finished with status 0
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The child process sees the counter as: 2
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The parent process sees the counter as 1
+The child process finished with status 0
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The child process sees the counter as: 1
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The parent process sees the counter as 1
+The child process finished with status 0
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The child process sees the counter as: 1
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The parent process sees the counter as 1
+The child process finished with status 0
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The child process sees the counter as: 1
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The parent process sees the counter as 1
+The child process finished with status 0
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The child process sees the counter as: 1
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The parent process sees the counter as 1
+The child process finished with status 0
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The child process sees the counter as: 1
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The parent process sees the counter as 1
+The child process finished with status 0
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The child process sees the counter as: 1
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The parent process sees the counter as 1
+The child process finished with status 0
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The child process sees the counter as: 1
+Unmapping is done
+Shared memory closed
+Shared memory is created with fd: 3
+The memory region is truncated
+The mapping is done
+The parent process sees the counter as 1
+The child process finished with status 0
+Unmapping is done
+Shared memory closed
