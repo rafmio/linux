@@ -34,8 +34,14 @@ main() {
         mq_send(mq, str, strlen(str) + 1, 0);
         mq_close(mq);
     } else {
-        mqd_t mq = mq_open("/mq0", O_RDONLY | O_CREAT, 0644, %attr)
+        mqd_t mq = mq_open("/mq0", O_RDONLY | O_CREAT, 0644, &attr);
         char buff[32];
-        
+        fprintf(stdout, "PARENT: Reading from child...\n");
+        int num_of_read_bytes = mq_receive(mq, buff, 32, NULL);
+        fprintf(stdout, "PARENT: Received from child: %s\n", buff);
+        mq_close(mq);
+        mq_unlink("/mq0");
     }
+
+    return 0;
 }
