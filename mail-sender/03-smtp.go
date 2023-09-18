@@ -22,7 +22,7 @@ func main() {
 
 	// Set up authentication information.
 	username := "rafmio"
-	password := "password1234"
+	password := "qwerty"
 
 	auth := smtp.PlainAuth("", username, password, host)
 

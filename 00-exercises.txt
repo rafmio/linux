@@ -40,3 +40,7 @@ last stop exercises: ~/linux/process-mgm/chunks/04-getpid.c
 	> done
 32. Перекомпилировать с проверкой на предмет выхода за пределы массива (а еще утечки):
 	$ gcc -fsanitize=address -g example.c
+
+Утилитарные задачи:
+- создать несколько процессов
+- создать несколько потоков
