@@ -1,6 +1,6 @@
 last stop book: 632
 last stop Extremalny Ci: 581
-last stop exercises: ~/linux/process-mgm/chunks/06-modify-env.c
+last stop exercises: ~/linux/process-mgm/chunks/04-getpid.c
 
 3. ls /proc, htop, ps, ps -eaf, ps x, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
 4. strace ./executableFile;
@@ -14,7 +14,10 @@ last stop exercises: ~/linux/process-mgm/chunks/06-modify-env.c
     Просмотр дампа файла $ objdump -s -j .data <fileName>
     Просмотр дампа файла $ objdump -S
 11. Просмотр ассемблерный код исп.файла на Си $ gcc -S <fileName> 
+12. Написать код по запуску execve() на Си, в т.ч. с аргументами
 13. Просмотр размеров текстового сегмента бинарника: $ size -A fileName.exe
+14. код на Си - размещение переменных в сегментах памяти процесса
+15. код на Си - адрес вершины стека процесса
 16. cat /proc/<PID>/maps, pmap <PID>
 17. Поупражняться с brk(), поискать динамику сдвигов крайней точки программы
 18. Заглянуть в потоки процессов: /proc/PID/task/TID # TID - Thread ID
@@ -23,6 +26,7 @@ last stop exercises: ~/linux/process-mgm/chunks/06-modify-env.c
 21. Разобраться с ForkExec() в Go - найти примеры использования и корректного завершения процессов
 22. По аналогии с 05-execve.c написать бинарник, который будет делать export PATH=$PATH:/usr/local/go/bin
 23. Просмотр каталога /proc/PID/fdinfo - открытых для процесса дескрипторов файлов
+25. Сигналы
 26. man proc / man 5 proc
 27. Посмотреть сколько потоков у процесса: $ ps -p <PID> -o nlwp
 28. $ readelf -a ./exefilename
@@ -40,9 +44,3 @@ last stop exercises: ~/linux/process-mgm/chunks/06-modify-env.c
 Утилитарные задачи:
 - создать несколько процессов
 - создать несколько потоков
-
-33. Найти в файле строку с содержанием текста:
-	$ sed '/искомый текст/!d' filename.txt
-
-34. Вывести на экран лишь нужную строку из файла:
-	$ sed '5q;d' file.txt   - выведет 5ю строку
