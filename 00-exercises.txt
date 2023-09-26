@@ -1,6 +1,12 @@
 last stop book: 635
 last stop Extremalny Ci: 581
 last stop exercises: ~/linux/process-mgm/chunks/25-wait.c
+<<<<<<< HEAD
+=======
+
+разобраться с кэш, буфер, страничный кэш, виртуальная файловая система, пользовательская буферизация
+
+>>>>>>> 56c9859 (Home PC 26.09.2023 10:26)
 
 3. ls /proc, htop, ps, ps -eaf, ps x, cat /proc/<PID>/cmdline, cat /proc/<PID>/status
 4. strace ./executableFile;
