@@ -1,6 +1,6 @@
 last stop book: 635
 last stop Extremalny Ci: 581
-last stop exercises: ~/linux/process-mgm/chunks/35-parent-child-communication.c
+last stop exercises: ~/linux/process-mgm/chunks/43-spawn-unplugged-thread.c
 
 разобраться с кэш, буфер, страничный кэш, виртуальная файловая система, пользовательская буферизация
 
