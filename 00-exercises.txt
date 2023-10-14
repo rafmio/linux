@@ -1,6 +1,6 @@
 last stop book: 635
 last stop Extremalny Ci: 581
-last stop exercises: ~/linux/process-mgm/chunks/48-threads-memory.c
+last stop exercises: ~/linux/process-mgm/chunks/49-mutex.c
 
 разобраться с кэш, буфер, страничный кэш, виртуальная файловая система, пользовательская буферизация
 
