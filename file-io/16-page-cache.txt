@@ -1,0 +1,3 @@
+Page Cache
+
+Page cache sometimes called 'disk cache'
