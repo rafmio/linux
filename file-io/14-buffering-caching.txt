@@ -1,0 +1,10 @@
+fflush() - flushes data in the process buffer to the kernel buffer
+fsync()  - flushes data in the kernel buffer to the physical medium
+
+Кэш ядра Linux = кэш страниц (page cache)
+
+You can think:
+read() is to copy data from the kernel buffer to the process buffer
+write() is to copy the process buffer to the kernel buffer
+
+
