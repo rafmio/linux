@@ -1,6 +1,6 @@
 last stop book: 635
 last stop Extremalny Ci: 581
-last stop exercises: ~/linux/process-mgm/chunks/50-conditional-variable.c
+last stop exercises: ~/linux/process-mgm/chunks/52-semaphore.c
 
 разобраться с кэш, буфер, страничный кэш, виртуальная файловая система, пользовательская буферизация
 
