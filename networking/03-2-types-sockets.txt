@@ -1,0 +1,12 @@
+Types of internet sockets:
+	- Stream Socket     # SOCK_STREAM
+	- Datagram Socket   # SOCK_DGRAM - connectionless sockets
+
+
+Stream sockets - two-way connected communication streams
+Stream sockets use the Transmission Control Protocol (TCP). TCP makes sure your data arrives sequentially and error-free. 
+
+Datagram sockets - if you send datagram, it may arrive, or it may arrive in out of order. Datagram sockets also use IP for routing (like stream sockets), but they don't use TCP, they use UPD - "User Datagram Protocol".
+
+
+
