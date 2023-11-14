@@ -1,0 +1,14 @@
+Loopback address - it always means "this machine I'm running on now".
+
+IPv4 loopback address:
+127.0.0.1
+
+IPv6 loopback address:
+0000:0000:0000:0000:0000:0000:0000:0001
+or
+::1
+
+To represent the IPv4 address 192.0.2.33 as an IPv4 address, you use following notatin:
+::ffff:192.0.2.33
+
+
